@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        // Function to calculate sum of two numbers
+        function calculateSum(num1, num2) {
+            return num1 + num2;
+        }
+
+        // Function to calculate product of two numbers
+        function calculateProduct(num1, num2) {
+            return num1 * num2;
+        }
+
+        // Get input from user using prompt dialogs
+        let input1 = prompt("Enter the first number:");
+        let input2 = prompt("Enter the second number:");
+
+        // Convert input strings to numbers
+        let number1 = parseFloat(input1);
+        let number2 = parseFloat(input2);
+
+        // Calculate sum and product
+        let sum = calculateSum(number1, number2);
+        let product = calculateProduct(number1, number2);
+
+        // Display results
+        alert(`Sum of ${number1} and ${number2} is: ${sum}`);
+        alert(`Product of ${number1} and ${number2} is: ${product}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table cellspacing="10" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">8:00 - 10:00</td>
+                <td colspan="2">Mathematics</td>
+                <td rowspan="2">Physics Lab</td>
+                <td>Chemistry</td>
+                <td rowspan="2">Biology Lab</td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td>History</td>
+                <td>Geography</td>
+            </tr>
+            <tr>
+                <td>10:00 - 12:00</td>
+                <td colspan="5">Break</td>
+            </tr>
+            <tr>
+                <td>12:00 - 2:00</td>
+                <td>Computer Science</td>
+                <td rowspan="2">Art</td>
+                <td colspan="2">Physical Education</td>
+                <td>Music</td>
+            </tr>
+            <tr>
+                <td>Economics</td>
+                <td>French</td>
+                <td>Mathematics</td>
+                <td>Social Studies</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="helloApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="HelloController">
+    <h1>{{ greeting }}</h1>
+</div>
+
+<script>
+    // Define AngularJS module
+    var app = angular.module('helloApp', []);
+
+    // Define AngularJS controller
+    app.controller('HelloController', function($scope) {
+        // Initialize greeting message
+        $scope.greeting = 'Hello, world!';
+    });
+</script>
+
+</body>
+</html>

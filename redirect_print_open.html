@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Functions</h2>
+    <button onclick="redirect()">Redirect</button>
+    <button onclick="openPopup()">Open Popup</button>
+    <button onclick="printContent()">Print Content</button>
+
+    <script>
+        // Function to redirect to a different page
+        function redirect() {
+            window.location.href = 'https://www.example.com'; // Replace with your desired URL
+        }
+
+        // Function to open a popup window
+        function openPopup() {
+            window.open('https://www.example.com', '_blank', 'width=600,height=400');
+        }
+
+        // Function to print content
+        function printContent() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

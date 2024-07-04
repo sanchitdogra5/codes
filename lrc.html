@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Alignment Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .left {
+            align-self: flex-start;
+        }
+        .center {
+            align-self: center;
+            margin: 0 auto;
+        }
+        .right {
+            align-self: flex-end;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <img src="https://via.placeholder.com/150" alt="Left Image">
+    </div>
+    <div class="center">
+        <img src="https://via.placeholder.com/150" alt="Center Image">
+    </div>
+    <div class="right">
+        <img src="https://via.placeholder.com/150" alt="Right Image">
+    </div>
+</body>
+</html>

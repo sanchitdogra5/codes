@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Train Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>XYZ Train Reservation System</h1>
+    <form id="reservationForm">
+        <div class="form-group">
+            <label>Select Route:</label>
+            <input type="radio" name="route" value="route1" required> Route 1
+            <input type="radio" name="route" value="route2"> Route 2
+            <input type="radio" name="route" value="route3"> Route 3
+        </div>
+        <div class="form-group">
+            <label for="train">Select Train:</label>
+            <select id="train" name="train" required>
+                <option value="">--Select a train--</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+        <button type="submit">Reserve</button>
+    </form>
+
+    <h2>Reservation Statistics</h2>
+    <p>Total Reservations: <span id="totalReservations">0</span></p>
+    <p>Reservations per Train:</p>
+    <ul id="trainReservations">
+        <li>Train 1: <span id="train1Reservations">0</span></li>
+        <li>Train 2: <span id="train2Reservations">0</span></li>
+        <li>Train 3: <span id="train3Reservations">0</span></li>
+        <li>Train 4: <span id="train4Reservations">0</span></li>
+        <li>Train 5: <span id="train5Reservations">0</span></li>
+        <li>Train 6: <span id="train6Reservations">0</span></li>
+        <li>Train 7: <span id="train7Reservations">0</span></li>
+        <li>Train 8: <span id="train8Reservations">0</span></li>
+        <li>Train 9: <span id="train9Reservations">0</span></li>
+    </ul>
+    <p>Reservations per Route:</p>
+    <ul>
+        <li>Route 1: <span id="route1Reservations">0</span></li>
+        <li>Route 2: <span id="route2Reservations">0</span></li>
+        <li>Route 3: <span id="route3Reservations">0</span></li>
+    </ul>
+
+    <script>
+        const trains = {
+            route1: ['Train 1', 'Train 2', 'Train 3'],
+            route2: ['Train 4', 'Train 5', 'Train 6'],
+            route3: ['Train 7', 'Train 8', 'Train 9']
+        };
+
+        const seats = {
+            'Train 1': 5,
+            'Train 2': 5,
+            'Train 3': 5,
+            'Train 4': 5,
+            'Train 5': 5,
+            'Train 6': 5,
+            'Train 7': 5,
+            'Train 8': 5,
+            'Train 9': 5
+        };
+
+        const reservations = {
+            total: 0,
+            train: {
+                'Train 1': 0,
+                'Train 2': 0,
+                'Train 3': 0,
+                'Train 4': 0,
+                'Train 5': 0,
+                'Train 6': 0,
+                'Train 7': 0,
+                'Train 8': 0,
+                'Train 9': 0
+            },
+            route: {
+                route1: 0,
+                route2: 0,
+                route3: 0
+            }
+        };
+
+        document.querySelectorAll('input[name="route"]').forEach(routeRadio => {
+            routeRadio.addEventListener('change', function() {
+                const selectedRoute = this.value;
+                const trainSelect = document.getElementById('train');
+                trainSelect.innerHTML = '<option value="">--Select a train--</option>';
+                trains[selectedRoute].forEach(train => {
+                    const option = document.createElement('option');
+                    option.value = train;
+                    option.textContent = train;
+                    trainSelect.appendChild(option);
+                });
+            });
+        });
+
+        document.getElementById('reservationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selectedRoute = document.querySelector('input[name="route"]:checked').value;
+            const selectedTrain = document.getElementById('train').value;
+
+            if (seats[selectedTrain] > 0) {
+                seats[selectedTrain]--;
+                reservations.total++;
+                reservations.train[selectedTrain]++;
+                reservations.route[selectedRoute]++;
+
+                document.getElementById('totalReservations').textContent = reservations.total;
+                document.getElementById(`${selectedTrain.toLowerCase().replace(' ', '')}Reservations`).textContent = reservations.train[selectedTrain];
+                document.getElementById(`${selectedRoute}Reservations`).textContent = reservations.route[selectedRoute];
+
+                alert('Reservation successful!');
+            } else {
+                alert('Sorry, no seats available on this train.');
+            }
+        });
+    </script>
+</body>
+</html>

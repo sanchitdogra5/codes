@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            img {
+                width: 200px;
+                height: auto;
+                border: 1px solid black;
+                border-radius: 30px;
+                cursor: pointer;
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="https://www.bigbasket.com/media/uploads/p/xl/20000911-2_39-fresho-kiwi-green.jpg" id="image">
+        <img src="https://www.bigbasket.com/media/uploads/p/xl/20000911-2_39-fresho-kiwi-green.jpg" id ="image2"onclick="removeImage()">
+        <script>
+            const img = document.getElementById("image");
+            img.addEventListener("click", () => {
+                img.style.display = 'none';
+            });
+            function removeImage() {
+            var img2 = document.getElementById('image2');
+            img2.style.display = 'none';
+            }
+        </script>
+    </body>
+</html>

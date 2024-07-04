@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Day and Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Current Day and Time</h2>
+        <p id="dayOfWeek"></p>
+        <p id="currentTime"></p>
+    </div>
+
+    <script>
+        function getCurrentDateTime() {
+            // Array of weekday names
+            const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            // Get current date and time
+            const now = new Date();
+
+            // Extract day and time components
+            const dayOfWeek = weekdays[now.getDay()];
+            let hours = now.getHours();
+            const meridian = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12; // Convert 24-hour time to 12-hour time
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            // Format the output
+            const currentTime = `${hours} ${meridian}: ${minutes}: ${seconds}`;
+
+            // Display the output on the HTML page
+            document.getElementById('dayOfWeek').textContent = `Today is: ${dayOfWeek}.`;
+            document.getElementById('currentTime').textContent = `Current time is: ${currentTime}`;
+        }
+
+        // Call the function once to display initial values
+        getCurrentDateTime();
+
+        // Update every second (1000 milliseconds)
+        setInterval(getCurrentDateTime, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Subscription Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-group input[type="radio"] {
+            margin-right: 10px;
+        }
+        .submit-button {
+            text-align: center;
+        }
+        .form-group button[type="submit"]{
+            padding: 10px 30px;
+            color: white;
+            background-color: blue;
+            border: none;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Magazine Subscription Form</h1>
+    <form >
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+        </div>
+        <div class="form-group">
+            <label for="pincode">Pin Code:</label>
+            <input type="number" id="pincode" name="pincode" required>
+        </div>
+        <div class="form-group">
+            <label>Choose Magazines:</label>
+            <input type="checkbox" id="magazine1" name="magazine" value="Magazine 1">
+            <label for="magazine1">Magazine 1</label><br>
+            <input type="checkbox" id="magazine2" name="magazine" value="Magazine 2">
+            <label for="magazine2">Magazine 2</label><br>
+            <input type="checkbox" id="magazine3" name="magazine" value="Magazine 3">
+            <label for="magazine3">Magazine 3</label><br>
+            <input type="checkbox" id="magazine4" name="magazine" value="Magazine 4">
+            <label for="magazine4">Magazine 4</label><br>
+            <input type="checkbox" id="magazine5" name="magazine" value="Magazine 5">
+            <label for="magazine5">Magazine 5</label>
+        </div>
+        <div class="form-group">
+            <label>Subscription Period:</label>
+            <input type="radio" id="one_year" name="subscription_period" value="1 year" required>
+            <label for="one_year">1 Year</label><br>
+            <input type="radio" id="two_years" name="subscription_period" value="2 years">
+            <label for="two_years">2 Years</label>
+        </div>
+        <div class="form-group submit-button">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+</body>
+</html>
